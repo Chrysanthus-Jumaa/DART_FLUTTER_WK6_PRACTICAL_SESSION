@@ -9,8 +9,8 @@ void main() {
 // DEFINE THE ROOT OF THE APP
 class MyApp extends StatelessWidget {
   // CALLING OUR CLASS CONSTRUCTOR
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  final TextEditingController _controller = TextEditingController();
   // BUILD THE ROOT OF OUR APPLICATION
   @override
   Widget build(BuildContext context) {
@@ -21,17 +21,15 @@ class MyApp extends StatelessWidget {
   body: Center(
     child: Column(
   children: [
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Icon(Icons.home, size: 30),
-        Icon(Icons.star, size: 30),
-        Icon(Icons.settings, size: 30),
-      ],
+    TextField(
+      decoration: InputDecoration(labelText: "Enter your name"),
+      controller: _controller,
     ),
-    Padding(
-      padding: EdgeInsets.all(20),
-      child: Text("Hello Flutter!"),
+    ElevatedButton(
+      onPressed: () {
+        print("Button Pressed! Whatever was entered is ${_controller.text}");
+      },
+      child: Text("Click Me"),
     ),
   ],
 )
@@ -40,3 +38,21 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// LAYOUT WIDGETS
+// Column(
+//   children: [
+//     Row(
+//       mainAxisAlignment: MainAxisAlignment.spaceAround,
+//       children: [
+//         Icon(Icons.home, size: 30),
+//         Icon(Icons.star, size: 30),
+//         Icon(Icons.settings, size: 30),
+//       ],
+//     ),
+//     Padding(
+//       padding: EdgeInsets.all(20),
+//       child: Text("Hello Flutter!"),
+//     ),
+//   ],
+// )
