@@ -1,6 +1,8 @@
 // IMPORTING THE MATERIAL DESIGN LIBRARY
 import 'package:flutter/material.dart';
 
+import 'second_screen.dart';
+
 // DEFINE THE APPLICATION ENTRY POINT
 void main() {
   runApp(MyApp());
@@ -18,10 +20,29 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
   appBar: AppBar(title: Text("Flutter Widgets")),
-  body: Center(
-    child: ListView(
+  body: BodyDisplayor()
+),
+    );
+  }
+}
+
+class BodyDisplayor extends StatelessWidget {
+  const BodyDisplayor({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ListView(
   children: [
-    ListTile(title: Text("Item 1")),
+    ListTile(
+  title: Text("Item 1"),
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SecondScreen()),
+    );
+  },
+),
     ListTile(title: Text("Item 2")),
     ListTile(title: Text("Item 3")),
     ListTile(title: Text("Item 3")),
@@ -40,12 +61,9 @@ class MyApp extends StatelessWidget {
     ListTile(title: Text("Item 3")),
   ],
 )
-  ),
-),
     );
   }
 }
-
 // LAYOUT WIDGETS
 // Column(
 //   children: [
