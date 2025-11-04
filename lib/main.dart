@@ -9,8 +9,8 @@ void main() {
 // DEFINE THE ROOT OF THE APP
 class MyApp extends StatelessWidget {
   // CALLING OUR CLASS CONSTRUCTOR
-  MyApp({super.key});
-  final TextEditingController _controller = TextEditingController();
+  const MyApp({super.key});
+  //final TextEditingController _controller = TextEditingController();
   // BUILD THE ROOT OF OUR APPLICATION
   @override
   Widget build(BuildContext context) {
@@ -19,18 +19,25 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
   appBar: AppBar(title: Text("Flutter Widgets")),
   body: Center(
-    child: Column(
+    child: ListView(
   children: [
-    TextField(
-      decoration: InputDecoration(labelText: "Enter your name"),
-      controller: _controller,
-    ),
-    ElevatedButton(
-      onPressed: () {
-        print("Button Pressed! Whatever was entered is ${_controller.text}");
-      },
-      child: Text("Click Me"),
-    ),
+    ListTile(title: Text("Item 1")),
+    ListTile(title: Text("Item 2")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
+    ListTile(title: Text("Item 3")),
   ],
 )
   ),
@@ -53,6 +60,22 @@ class MyApp extends StatelessWidget {
 //     Padding(
 //       padding: EdgeInsets.all(20),
 //       child: Text("Hello Flutter!"),
+//     ),
+//   ],
+// )
+
+// INPUT WIDGETS
+// Column(
+//   children: [
+//     TextField(
+//       decoration: InputDecoration(labelText: "Enter your name"),
+//       controller: _controller,
+//     ),
+//     ElevatedButton(
+//       onPressed: () {
+//         print("Button Pressed! Whatever was entered is ${_controller.text}");
+//       },
+//       child: Text("Click Me"),
 //     ),
 //   ],
 // )
